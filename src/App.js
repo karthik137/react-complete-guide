@@ -15,7 +15,11 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p> */}
         <h1>Hi, i am a react app</h1>
-        <Person></Person>
+        <Person name="kirito" age = "17"></Person>
+        <Person name="Asuna" age = "18">My Hobbies: Cooking</Person>
+        <Person name="Eugeo" age = "16"></Person>
+        
+
       </div>
     );
    
