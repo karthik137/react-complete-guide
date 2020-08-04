@@ -4,6 +4,28 @@ import './App.css';
 import Person from './Person/Person'
 
 class App extends Component {
+  state = {
+    person : [
+      {
+        name : 'Kirito',
+        age : 28
+      },
+      {
+        name : 'Asuna',
+        age : 29
+      },
+      {
+        name : 'Eugeo',
+        age : 26
+      }
+    ]
+  }
+
+
+switchNameHandler = () => {
+  console.log('Was clicked!');
+}
+
   render() {
     return (
       <div className="App">
@@ -15,10 +37,13 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p> */}
         <h1>Hi, i am a react app</h1>
-        <Person name="kirito" age = "17"></Person>
+        <button onClick={this.switchNameHandler}>Switch Name</button>
+        {/* <Person name="kirito" age = "17"></Person>
         <Person name="Asuna" age = "18">My Hobbies: Cooking</Person>
-        <Person name="Eugeo" age = "16"></Person>
-        
+        <Person name="Eugeo" age = "16"></Person> */}
+          <Person name={this.state.person[0].name} age = {this.state.person[0].age}></Person>
+        <Person name={this.state.person[1].name} age = {this.state.person[1].age}>My Hobbies: Cooking</Person>
+        <Person name={this.state.person[2].name} age = {this.state.person[2].age}></Person>      
 
       </div>
     );
