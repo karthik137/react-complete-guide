@@ -93,25 +93,29 @@ togglePersonHandler = () => {
     };
 
 
+    //default
+    let persons = null;
+
+    if(this.state.showPersons){
+      persons = (
+        <div >
+        <Person 
+        name={this.state.person[1].name} 
+        age = {this.state.person[1].age}
+        click={this.switchNameHandler}
+        changed={this.nameChangeHandler}>
+          My Hobbies: Cooking</Person>
+        <Person name={this.state.person[2].name} age = {this.state.person[2].age}></Person>
+        </div>
+      );
+    }
+
     return (
       <div className="App">
         <h1>Hi, i am a react app</h1>
         <button style={style} onClick={this.togglePersonHandler}>Toggle Persons</button>
           <Person name={this.state.person[0].name} age = {this.state.person[0].age}></Person>
-        {
-          this.state.showPersons === true ?  
-          <div >
-          <Person 
-          name={this.state.person[1].name} 
-          age = {this.state.person[1].age}
-          click={this.switchNameHandler}
-          changed={this.nameChangeHandler}>
-            My Hobbies: Cooking</Person>
-          <Person name={this.state.person[2].name} age = {this.state.person[2].age}></Person>      
-
-
-          </div> : null
-        }
+          {persons}
       </div>
     );
   
