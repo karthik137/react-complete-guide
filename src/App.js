@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person'
-import Radium from 'radium'
+import Radium, {StyleRoot} from 'radium'
 
 class App extends Component {
   state = {
@@ -163,6 +163,7 @@ togglePersonHandler = () => {
     }
 
     return (
+      <StyleRoot>
       <div className="App">
         <h1>Hi, i am a react app</h1>
         <p className={classes.join(' ')}> This is a paragraph</p>
@@ -170,6 +171,8 @@ togglePersonHandler = () => {
           {/* <Person name={this.state.person[0].name} age = {this.state.person[0].age}></Person> */}
           {persons}
       </div>
+      </StyleRoot>
+
     );
   
   }
