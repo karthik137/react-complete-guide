@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person'
+import Radium from 'radium'
 
 class App extends Component {
   state = {
@@ -110,7 +111,11 @@ togglePersonHandler = () => {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
     };
 
 
@@ -141,6 +146,10 @@ togglePersonHandler = () => {
       );
 
       style.backgroundColor = 'red'
+      style[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      }
     }
 
     //const classes = [].join(' ');
@@ -166,4 +175,4 @@ togglePersonHandler = () => {
   }
 }
 
-export default App;
+export default Radium(App);
