@@ -105,7 +105,8 @@ togglePersonHandler = () => {
   render() {
 
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color:'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -138,11 +139,24 @@ togglePersonHandler = () => {
           <Person name={this.state.person[2].name} age = {this.state.person[2].age}></Person> */}
         </div>
       );
+
+      style.backgroundColor = 'red'
+    }
+
+    //const classes = [].join(' ');
+    const classes = [];
+    if(this.state.person.length <= 2){
+      classes.push('red')
+    }
+
+    if(this.state.person.length <= 1){
+      classes.push('bold'); //classes = ['red', 'bold']
     }
 
     return (
       <div className="App">
         <h1>Hi, i am a react app</h1>
+        <p className={classes.join(' ')}> This is a paragraph</p>
         <button style={style} onClick={this.togglePersonHandler}>Toggle Persons</button>
           {/* <Person name={this.state.person[0].name} age = {this.state.person[0].age}></Person> */}
           {persons}
