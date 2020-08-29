@@ -6,14 +6,14 @@ import styled from 'styled-components';
 // import Radium, {StyleRoot} from 'radium'
 
 const StyledButton = styled.button`
-  background-color: green;
+  background-color: ${props => props.alt ? 'red':'green'};
   color:white;
   font: inherit;
   border: 1px solid blue;
   padding: 8px;
   cursor: pointer;
   &:hover {
-    background-color: lightgreen;
+    background-color: ${props => props.alt ? 'salmon':'lightgreen'};
     color: black;
   }
 `
@@ -191,7 +191,7 @@ togglePersonHandler = () => {
         <h1>Hi, i am a react app</h1>
         <p className={classes.join(' ')}> This is a paragraph</p>
         {/* <button style={style} onClick={this.togglePersonHandler}>Toggle Persons</button> */}
-        <StyledButton  onClick={this.togglePersonHandler}>Toggle Persons</StyledButton>
+        <StyledButton alt={this.state.showPersons}  onClick={this.togglePersonHandler}>Toggle Persons</StyledButton>
 
          
           {/* <Person name={this.state.person[0].name} age = {this.state.person[0].age}></Person> */}
