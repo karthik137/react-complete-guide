@@ -2,7 +2,22 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person'
-import Radium, {StyleRoot} from 'radium'
+import styled from 'styled-components';
+// import Radium, {StyleRoot} from 'radium'
+
+const StyledButton = styled.button`
+  background-color: green;
+  color:white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+  &:hover {
+    background-color: lightgreen;
+    color: black;
+  }
+`
+
 
 class App extends Component {
   state = {
@@ -163,19 +178,28 @@ togglePersonHandler = () => {
     }
 
     return (
-      <StyleRoot>
+      // <StyleRoot>
+      // <div className="App">
+      //   <h1>Hi, i am a react app</h1>
+      //   <p className={classes.join(' ')}> This is a paragraph</p>
+      //   <button style={style} onClick={this.togglePersonHandler}>Toggle Persons</button>
+      //     {/* <Person name={this.state.person[0].name} age = {this.state.person[0].age}></Person> */}
+      //     {persons}
+      // </div>
+      // </StyleRoot>
       <div className="App">
         <h1>Hi, i am a react app</h1>
         <p className={classes.join(' ')}> This is a paragraph</p>
-        <button style={style} onClick={this.togglePersonHandler}>Toggle Persons</button>
+        {/* <button style={style} onClick={this.togglePersonHandler}>Toggle Persons</button> */}
+        <StyledButton  onClick={this.togglePersonHandler}>Toggle Persons</StyledButton>
+
+         
           {/* <Person name={this.state.person[0].name} age = {this.state.person[0].age}></Person> */}
           {persons}
       </div>
-      </StyleRoot>
-
     );
   
   }
 }
 
-export default Radium(App);
+export default App;
