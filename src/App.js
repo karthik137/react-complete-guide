@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import cssClasses from './App.module.css';
 import Person from './Person/Person'
 import styled from 'styled-components';
 // import Radium, {StyleRoot} from 'radium'
@@ -191,7 +192,8 @@ togglePersonHandler = () => {
         <h1>Hi, i am a react app</h1>
         <p className={classes.join(' ')}> This is a paragraph</p>
         {/* <button style={style} onClick={this.togglePersonHandler}>Toggle Persons</button> */}
-        <StyledButton alt={this.state.showPersons}  onClick={this.togglePersonHandler}>Toggle Persons</StyledButton>
+        {/* <StyledButton alt={this.state.showPersons}  onClick={this.togglePersonHandler}>Toggle Persons</StyledButton> */}
+        <button className={cssClasses.button} alt={this.state.showPersons}  onClick={this.togglePersonHandler}>Toggle Persons</button>
 
          
           {/* <Person name={this.state.person[0].name} age = {this.state.person[0].age}></Person> */}
